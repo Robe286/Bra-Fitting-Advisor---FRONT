@@ -1,6 +1,16 @@
+import { Link } from "react-router-dom"
+
 function Home () {
   return (
-    <h2>Soy la home</h2>
+    <section className="">
+      <div className="">
+        <h1>Bra Fitting Advisor</h1>
+        <p>Experiencia de Asesoramiento Especializado en Corsetería</p>
+        <Link to={"/advisor"}>
+          <button>Inicia tu Asesoramiento</button>
+        </Link>
+      </div>
+    </section>
   )
 }
 
