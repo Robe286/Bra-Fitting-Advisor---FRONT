@@ -4,7 +4,8 @@ import axios from "axios";
 function BraSizeForm () {
   const [bustSize, setBustSize] = useState('90');
   const [underSize, setUnderSize] = useState('75');
-  //const [result, setResult] = useState('null');
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
   const urlAPI = 'http://localhost:3001/api/sizes/calculate-bra'
 
   const getBraSize = async () => {
@@ -22,23 +23,18 @@ function BraSizeForm () {
       if(!sizes.ok) { throw new Error(`Error ${sizes.status}: ${sizes.statusText}`)}
 
       const data = await sizes.json();
-      console.log('Talla obtenida con éxito', data)
-
+      setResult(data.size);
+      
     } catch (error) {
-      console.error('Error al añadir la tarea', error)
+      setError(error.message)
+      console.error(error)
     }
   }
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(bustSize === null || underSize === null) {
-      alert('selecciona ambas medidas antes de enviar');
-      return;
-    }
-    getBraSize()
+    getBraSize();
   }
-
 
   return (
     <section>
@@ -63,8 +59,13 @@ function BraSizeForm () {
           onChange={(e) => setUnderSize(e.target.value)}
         />
         <button type="submit">Calcular talla</button>
-
       </form>
+      {error && (
+        <div>Error: {error}</div>
+      )}
+      {result && (
+        <div>{result}</div>
+      )}
     </section>
   )
 }
