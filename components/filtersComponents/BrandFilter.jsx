@@ -1,34 +1,25 @@
 import Select from "react-select";
+import { brandOptions } from "../../utils/filterOptions.js";
 
-const BrandOptions = [
-  { value: 'Dim', label: "Dim" },
-  { value: 'Gisela', label: 'Gisela' },
-  { value: 'Passionata', label: 'Passionata' },
-  { value: 'Rosa Faia', label: 'Rosa Faia' },
-  { value: 'Selene', label: 'Selene' },
-  { value: 'Selmark', label: 'Selmark' },
-  { value: 'Shok Absorber', label: 'Shok Absorber' },
-  { value: 'Sportex', label: 'Sportex' },
-  { value: 'Triumph', label: 'Triumph' },
-  { value: 'Ysabel Mora', label: 'Ysabel Mora' },
-  { value: 'Variance', label: 'Variance' }
-];
+function BrandFilter ({ filters, setFilters}) {
+  
+  const handleChange = (brandOptions) => {
+    const values = brandOptions.map(opt => opt.value);
+    setFilters(prev => ({ ...prev, brand: values}));
+  };
 
-function BrandSelect ({ value, onChange }) {
   return (
     <div>
-      <label>Marcas:</label>
+      <label>¿Qúe marca de sujetador sueles gastar?</label>
       <Select
         isMulti
-        options={BrandOptions}
-        value={value}
-        onChange={onChange}
-        placeholder="Selecciona las marcas"
+        options={brandOptions}
+        value={brandOptions.filter(opt => filters.brand.includes(opt.value))}
+        onChange={handleChange}
+        placeholder="Selecciona todas las que desees"
       />
     </div>
   );
 }
 
-export default BrandSelect;
-
-
+export default BrandFilter;

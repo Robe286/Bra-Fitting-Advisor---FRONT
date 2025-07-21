@@ -1,13 +1,15 @@
-import BrandFilter from "./filtersComponents/BrandFilter";
 import { useState } from "react";
+import { useFilters } from "../hooks/useFilters.js";
+import BrandFilter from "./filtersComponents/BrandFilter.jsx";
 
-function filterProductsForm () {
+function FilterProductsForm () {
+  const { filters, setFilters, resetFilters } = useFilters();
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const urlAPI = 'http://localhost:3001/api/products/filter'
 
-  getFilterProducts = async () => {
-    const payload = {}
+  const getFilterProducts = async () => {
+    const payload = {} // Rellenar el payload
     try {
       const filters = await fetch(urlAPI, {
         method: 'POST',
@@ -28,11 +30,13 @@ function filterProductsForm () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    getFilterProducts();
   };
 
   return (
     <section>
       <form onSubmit={handleSubmit}>
+        <BrandFilter filters={filters} setFilters={setFilters} />
         <button type="submit">Obtener recomendaciónes</button>
       </form>
       {error && (
@@ -45,4 +49,4 @@ function filterProductsForm () {
   )
 }
 
-export default filterProductsForm;
+export default FilterProductsForm;
