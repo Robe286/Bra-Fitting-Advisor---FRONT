@@ -10,7 +10,6 @@ function BraSizeForm () {
 
   const getBraSize = async () => {
     const payload = { bustInput: bustSize, underInput: underSize }
-    
     try {
       const sizes = await fetch (urlAPI, {
         method: 'POST',
@@ -51,7 +50,7 @@ function BraSizeForm () {
         />
         <label htmlFor="underSlider">Contorno bajo pecho: {underSize}</label>
         <input
-          id="undeSlider"
+          id="underSlider"
           type="range"
           min={58}
           max={107}
