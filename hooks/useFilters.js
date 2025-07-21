@@ -8,7 +8,8 @@ export function useFilters () {
     stuffed: [],
     brand: [],
     priceMin: 0,
-    priceMax: 100
+    priceMax: 100,
+    color: []
   });
 
   const resetFilters = () => {
@@ -19,7 +20,8 @@ export function useFilters () {
     stuffed: [],
     brand: [],
     priceMin: 0,
-    priceMax: 100
+    priceMax: 100,
+    color: []
     });
   };
 

@@ -16,7 +16,7 @@ function BrandFilter ({ filters, setFilters}) {
         options={brandOptions}
         value={brandOptions.filter(opt => filters.brand.includes(opt.value))}
         onChange={handleChange}
-        placeholder="Selecciona todas las que desees"
+        placeholder="Selecciona las marcas que desees"
       />
     </div>
   );

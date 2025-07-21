@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { useFilters } from "../hooks/useFilters.js";
 import BrandFilter from "./filtersComponents/BrandFilter.jsx";
+import PriceFilter from "./filtersComponents/priceFilter.jsx";
+import StuffedFilter from "./filtersComponents/stuffedFilter.jsx";
+import CategoryFilter from "./filtersComponents/categoryFilter.jsx";
+import CupFilter from "./filtersComponents/cupFilter.jsx";
+import SizeFilter from "./filtersComponents/sizeFilter.jsx";
+import ColorFilter from "./filtersComponents/colorFilter.jsx";
 
 function FilterProductsForm () {
+
   const { filters, setFilters, resetFilters } = useFilters();
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
@@ -36,8 +43,15 @@ function FilterProductsForm () {
   return (
     <section>
       <form onSubmit={handleSubmit}>
+        <SizeFilter filters={filters} setFilters={setFilters} />
+        <CupFilter filters={filters} setFilters={setFilters} />
+        <CategoryFilter filters={filters} setFilters={setFilters} />
+        <StuffedFilter filters={filters} setFilters={setFilters} />
         <BrandFilter filters={filters} setFilters={setFilters} />
+        <PriceFilter filters={filters} setFilters={setFilters} />
+        <ColorFilter filters={filters} setFilters={setFilters} />
         <button type="submit">Obtener recomendaciónes</button>
+        <button type="button" onClick={resetFilters}>Comienza de nuevo</button>
       </form>
       {error && (
         <div>Error: {error}</div>
