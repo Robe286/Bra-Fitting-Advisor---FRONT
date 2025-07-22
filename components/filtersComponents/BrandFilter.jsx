@@ -10,9 +10,10 @@ function BrandFilter ({ filters, setFilters}) {
 
   return (
     <div>
-      <label>¿Qúe marca de sujetador sueles gastar?</label>
+      <label htmlFor="brand">¿Qúe marca de sujetador sueles gastar?</label>
       <Select
         isMulti
+        inputId="brand"
         options={brandOptions}
         value={brandOptions.filter(opt => filters.brand.includes(opt.value))}
         onChange={handleChange}

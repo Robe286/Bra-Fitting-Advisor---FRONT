@@ -10,9 +10,10 @@ function ColorFilter ({ filters, setFilters }) {
 
   return (
     <div>
-      <label>¿Buscas algún color en especial?</label>
+      <label htmlFor="color">¿Buscas algún color en especial?</label>
       <Select
         isMulti
+        inputId="color"
         options={colorOptions}
         value={colorOptions.filter(opt => filters.color.includes(opt.value))}
         onChange={handleChange}

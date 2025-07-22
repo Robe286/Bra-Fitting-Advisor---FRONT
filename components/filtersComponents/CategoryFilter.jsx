@@ -2,7 +2,7 @@ import Select from "react-select";
 import { categoryOptions } from "../../utils/filterOptions.js";
 
 function CategoryFilter ({ filters, setFilters}) {
-
+  
   const handleChange = selectedOptions => {
     const values = selectedOptions.map(opt => opt.value);
     setFilters(prev => ({ ...prev, category: values }));
@@ -10,9 +10,10 @@ function CategoryFilter ({ filters, setFilters}) {
 
   return (
     <div>
-      <label>¿Qué tipo de sujetador estás buscando?</label>
+      <label htmlFor="category">¿Qué tipo de sujetador estás buscando?</label>
       <Select
         isMulti
+        inputId="category"
         options={categoryOptions}
         value={categoryOptions.filter(opt => filters.category.includes(opt.value))}
         onChange={handleChange}

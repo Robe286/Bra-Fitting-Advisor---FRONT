@@ -9,8 +9,9 @@ function SizeFilter ({ filters, setFilters }) {
 
   return (
     <div>
-      <label>Dinos cual es tu talla</label>
+      <label htmlFor="size">Dinos cual es tu talla</label>
       <Select
+        inputId="size"
         options={sizeOptions}
         value={sizeOptions.find(opt => opt.value === filters.size)}
         onChange={handleChange}

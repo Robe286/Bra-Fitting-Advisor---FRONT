@@ -1,5 +1,5 @@
-import BraSizeForm from '../components/BraSizeForm.jsx';
-import FilterProductsForm from '../components/filterProductsForm.jsx';
+import BraSizeForm from '../components/formsComponents/BraSizeForm.jsx';
+import FilterProductsForm from '../components/formsComponents/FilterProductsForm.jsx';
 
 function Advisor () {
   

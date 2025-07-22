@@ -3,6 +3,7 @@ export const sizeOptions = [
   { value: '80', label: '80' },
   { value: '85', label: '85' },
   { value: '90', label: '90' },
+  { value: '95', label: '95' },
   { value: '100', label: '100' },
   { value: '105', label: '105' },
   { value: '110', label: '110' },

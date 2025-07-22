@@ -10,9 +10,10 @@ function StuffedFilter ({ filters, setFilters }) {
 
   return (
     <div>
-      <label>¿Qué tipo de relleno buscas?</label>
+      <label htmlFor="stuffed">¿Qué tipo de relleno buscas?</label>
       <Select
         isMulti
+        inputId="stuffed"
         options={stuffedOptions}
         value={stuffedOptions.filter(opt => filters.stuffed.includes(opt.value))}
         onChange={handleChange}

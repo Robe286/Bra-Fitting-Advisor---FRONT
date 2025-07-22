@@ -9,8 +9,9 @@ function CupFilter ({ filters, setFilters}) {
 
   return (
     <div>
-      <label>Dinos cual es tu talla de copa</label>
+      <label htmlFor="cup">Dinos cual es tu talla de copa</label>
       <Select
+        inputId="cup"
         options={cupOptions}
         value={cupOptions.find(opt => opt.value === filters.cup)}
         onChange={handleChange}
