@@ -3,7 +3,7 @@ import Cookies from "js.cookie";
 
 const API = axios.create({
   baseURL: 'http://localhost:3001/api/sizes',
-  withCredentials: true,
+  withCredentials: true, // Permite envío de cookies
 });
 
 API.interceptors.request.use(config => {

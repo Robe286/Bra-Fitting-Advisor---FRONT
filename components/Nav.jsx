@@ -4,8 +4,7 @@ function Nav () {
   return (
     <nav>
       <Link to={"/"}>Site Name</Link>
-      <Link to={""}>Productos</Link>
-      <Link to={""}>Lista de Deseos</Link>
+      <Link to={"/dasboard"}>Lista de Deseos</Link>
       <Link >
         <button>REGÍSTRATE</button>
       </Link>

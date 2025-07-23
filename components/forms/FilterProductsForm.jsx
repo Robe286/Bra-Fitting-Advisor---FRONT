@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { useFilters } from "../../hooks/useFilters.js";
-import BrandFilter from "../filtersComponents/BrandFilter.jsx";
-import PriceFilter from "../filtersComponents/priceFilter.jsx";
-import StuffedFilter from "../filtersComponents/stuffedFilter.jsx";
-import CategoryFilter from "../filtersComponents/categoryFilter.jsx";
-import CupFilter from "../filtersComponents/cupFilter.jsx";
-import SizeFilter from "../filtersComponents/sizeFilter.jsx";
-import ColorFilter from "../filtersComponents/colorFilter.jsx";
+import BrandFilter from "../filters/BrandFilter.jsx";
+import PriceFilter from "../filters/priceFilter.jsx";
+import StuffedFilter from "../filters/stuffedFilter.jsx";
+import CategoryFilter from "../filters/categoryFilter.jsx";
+import CupFilter from "../filters/cupFilter.jsx";
+import SizeFilter from "../filters/sizeFilter.jsx";
+import ColorFilter from "../filters/colorFilter.jsx";
+import Results from "../Results.jsx";
 
 function FilterProductsForm () {
 
-  const { filters, setFilters, resetFilters } = useFilters();
+  const { filters, setFilters, resetFilters, filtersAreEmpty } = useFilters();
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const urlAPI = 'http://localhost:3001/api/products/filter'
 
   const getFilterProducts = async () => {
-    const payload = { filters } // Rellenar el payload
+    const payload = { filters }
     try {
       const filters = await fetch(urlAPI, {
         method: 'POST',
@@ -39,14 +40,12 @@ function FilterProductsForm () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (filtersAreEmpty()) {
+      alert('Debes rellenar al menos un filtro para que podamos asesorarte como te mereces');
+      return;
+    }
     getFilterProducts();
   };
-
-  /*
-  <CategoryFilter filters={filters} setFilters={setFilters} />
-  <StuffedFilter filters={filters} setFilters={setFilters} />
-  <ColorFilter filters={filters} setFilters={setFilters} />
-  */
 
   return (
     <section>
@@ -64,6 +63,7 @@ function FilterProductsForm () {
       {error && (
         <div>Error: {error}</div>
       )}
+      <Results products={result}/>
     </section>
   )
 }
