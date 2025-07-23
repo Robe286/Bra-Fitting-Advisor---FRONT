@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useFilters } from "../../hooks/useFilters.js";
-import BrandFilter from "../filters/BrandFilter.jsx";
-import PriceFilter from "../filters/priceFilter.jsx";
-import StuffedFilter from "../filters/stuffedFilter.jsx";
-import CategoryFilter from "../filters/categoryFilter.jsx";
+
 import CupFilter from "../filters/cupFilter.jsx";
 import SizeFilter from "../filters/sizeFilter.jsx";
+import BrandFilter from "../filters/BrandFilter.jsx";
+import PriceFilter from "../filters/priceFilter.jsx";
 import ColorFilter from "../filters/colorFilter.jsx";
+import StuffedFilter from "../filters/stuffedFilter.jsx";
+import CategoryFilter from "../filters/categoryFilter.jsx";
+
 import Results from "../Results.jsx";
 
 function FilterProductsForm () {
@@ -14,6 +16,7 @@ function FilterProductsForm () {
   const { filters, setFilters, resetFilters, filtersAreEmpty } = useFilters();
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  
   const urlAPI = 'http://localhost:3001/api/products/filter'
 
   const getFilterProducts = async () => {

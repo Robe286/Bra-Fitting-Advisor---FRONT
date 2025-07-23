@@ -1,8 +1,8 @@
 import axios from "axios";
-import Cookies from "js.cookie";
+import Cookies from "js-cookie";
 
 const API = axios.create({
-  baseURL: 'http://localhost:3001/api/sizes',
+  baseURL: 'http://localhost:3001/api/',
   withCredentials: true, // Permite envío de cookies
 });
 

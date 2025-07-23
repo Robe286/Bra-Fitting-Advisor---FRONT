@@ -15,7 +15,7 @@ function SizeFilter ({ filters, setFilters }) {
         options={sizeOptions}
         value={sizeOptions.find(opt => opt.value === filters.size)}
         onChange={handleChange}
-        placeholder="Selecciona tu medida"
+        placeholder="Selecciona tu talla"
       />
     </div>
   );
