@@ -1,7 +1,6 @@
-import { useFavorites } from "../context/FavoriteContext";
+/*
 
 function Dashboard() {
-  const { favorites, deleteFavorite } = useFavorites();
 
   return (
     <div>
@@ -25,3 +24,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+*/

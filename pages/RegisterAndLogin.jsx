@@ -4,12 +4,12 @@ import RegisterForm from "../components/forms/RegisterForm.jsx";
 function RegisterAndLogin () {
   return (
     <section>
-      <h2>Regístrate y crea un espacio propio para guardar tus recomendaciónes</h2>
+      <h2>Regístrate o inicia sesión y guarda tus recomendaciónes</h2>
       <div>
-        <RegisterForm/>
+        <RegisterForm />
       </div>
       <div>
-        <LoginForm/>
+        <LoginForm />
       </div>
     </section>
   )

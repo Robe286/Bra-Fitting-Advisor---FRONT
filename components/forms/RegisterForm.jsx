@@ -13,7 +13,7 @@ export default function RegisterForm () {
       const res = await API.post('/auth/register', { email, password });
       login(res.data.token);
     } catch {
-      alert('Error al registrar');
+      alert('Ya existe ese usuario');
     }
   };
 
@@ -32,7 +32,7 @@ export default function RegisterForm () {
         onChange={e => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <button type="submit">Registrarme</button>   
+      <button type="submit">Registrarme</button> 
     </form>
   );
 }

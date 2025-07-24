@@ -1,44 +1,34 @@
+/*
 import { createContext, useContext, useState } from 'react';
+import { AuthContext } from "../../context/AuthContext";
+import API from '../api/axiosConfig';
 
-const FAVORITOS_KEY = 'Favoritos_guardados';
 const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
+  const [favorites, setFavorites] = useState([]);
+  const { token } = useContext(AuthContext);
 
-  const [favorites, setFavorites] = useState(() => {
-    const saved = localStorage.getItem(FAVORITOS_KEY);
-    return saved ? JSON.parse(saved) : [];
-  });
 
-  const saveAtLocalStorage = (product) => {
-    localStorage.setItem(FAVORITOS_KEY, JSON.stringify(product));
-  }
-
-  const addToFavorites = (product) => {
-    setFavorites(prev => {
-      const exist = prev.some(p => p._id === product._id);
-      if (exist) return prev;
-      const updated = [...prev, product];
-      saveAtLocalStorage(updated);
-      
-      return updated;
-    })
-  };
-
-  const deleteFavorite = (id) => {
-    setFavorites(prev => {
-      const updated = prev.filter(p => p._id !== id);
-      saveAtLocalStorage(updated);
-      
-      return updated;
+  const addToFavorites = async (product) => {
+   try {
+    await API.post(`/api/favorites/${product._id}`, null, {
+      headers: { Authorization: `Bearer ${token}`},
     });
+    setFavorites(prev => [...prev, product]);
+
+   } catch  (error) {
+    console.error('error al guardar favorito', error)
+   }
   };
+
 
   return (
-    <FavoritesContext.Provider value={{ favorites, addToFavorites, deleteFavorite }}>
+    <FavoritesContext.Provider value={{ favorites, addToFavorites }}>
       {children}
     </FavoritesContext.Provider>
   );
 };
 
 export const useFavorites = () => useContext(FavoritesContext);
+*/

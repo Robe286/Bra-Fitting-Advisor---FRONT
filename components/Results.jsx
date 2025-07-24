@@ -1,7 +1,5 @@
-import { useFavorites } from "../context/FavoriteContext";
-
 function Results({ products }) {
-  const { addToFavorites } = useFavorites();
+
   return (
     <div>
       {products && (
@@ -16,7 +14,6 @@ function Results({ products }) {
                   height={500}
                 />
               </div>
-              <button onClick={() => addToFavorites(product)}>Añadir a mi lista de deseos</button>
             </li>
           ))}
         </ul>

@@ -1,18 +1,10 @@
-import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function Nav () {
-  //const [view, setview] = useState('login');
-  //const { isAuthenticated } = useContext(AuthContext);
-
-  //if (isAuthenticated) return <Navigate to="/dashboard" />;
 
   return (
     <nav>
       <Link to={"/"}>Site Name</Link>
-      <Link to={"/dasboard"}>Lista de Deseos</Link>
       <Link to={"/register"}>
         <button>REGÍSTRATE</button>
       </Link>

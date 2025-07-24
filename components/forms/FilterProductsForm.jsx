@@ -41,6 +41,11 @@ function FilterProductsForm () {
     }
   }
 
+  const handleClean = () => {
+    resetFilters()
+    setResult(null)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (filtersAreEmpty()) {
@@ -61,8 +66,8 @@ function FilterProductsForm () {
         <PriceFilter filters={filters} setFilters={setFilters} />
         <ColorFilter filters={filters} setFilters={setFilters} />
         <button type="submit">Obtener recomendaciónes</button>
-        <button type="button" onClick={resetFilters}>Comienza de nuevo</button>
       </form>
+        <button type="button" onClick={handleClean}>Comienza de nuevo</button>
       {error && (
         <div>Error: {error}</div>
       )}
