@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Error from "../pages/Error";
-import Template from "../layouts/Template";
 import Home from "../pages/Home";
+import Error from "../pages/Error";
 import Advisor from "../pages/Advisor";
+import Template from "../layouts/Template";
 import RegisterAndLogin from "../pages/RegisterAndLogin";
+import PrivateRoute from "../components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -12,10 +13,17 @@ const router = createBrowserRouter([
     element: <Template />,
     children: [
       { index: true, element: <Home /> },
-      { path: "advisor", element: <Advisor/> },
-      { path: "register", element: <RegisterAndLogin/> }
-    ]
-  }
-])
+      { path: "register", element: <RegisterAndLogin /> },
+      {
+        path: "advisor",
+        element: (
+          <PrivateRoute>
+            <Advisor />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+]);
 
 export default router

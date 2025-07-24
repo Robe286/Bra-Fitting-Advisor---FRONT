@@ -6,7 +6,7 @@ function BraSizeForm () {
   const [underSize, setUnderSize] = useState('75');
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
-  
+
   const urlAPI = 'http://localhost:3001/api/sizes/calculate-bra'
 
   const getBraSize = async () => {
@@ -21,7 +21,6 @@ function BraSizeForm () {
       });
 
       if(!sizes.ok) { throw new Error(`Error ${sizes.status}: ${sizes.statusText}`)}
-
       const data = await sizes.json();
       setResult(data.size);
       

@@ -71,7 +71,9 @@ function FilterProductsForm () {
       {error && (
         <div>Error: {error}</div>
       )}
-      <Results products={result}/>
+      <div>
+        <Results products={result}/>
+      </div>
     </section>
   )
 }

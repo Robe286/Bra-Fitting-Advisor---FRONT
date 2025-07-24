@@ -1,24 +1,40 @@
 import API from "../../api/axiosConfig";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate, useLocation } from 'react-router-dom';
+
+import Spinner from "../Spinner";
 
 export default function LoginForm () {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const { login } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/advisor"; // fallback
 
   const handleLogin = async e => {
     e.preventDefault();
+    setLoading(true);
+
     try {
       const res = await API.post('/auth/login', { email, password });
+      await new Promise(resolve => setTimeout(resolve, 1500)) // Tiempo de espera
       login(res.data.token);
+      navigate(from, { replace: true }); // Redirige a la ruta original
 
     } catch {
-      alert('Credenciales incorrectas')
+      alert('Credenciales incorrectas');
+      setLoading(false);
     }
   };
 
-  return (
+  return loading ? (
+    <Spinner message="Iniciando sesión..." />
+  ) : (
     <form onSubmit={handleLogin}>
       <h2>Inicia Sesión</h2>
       <input

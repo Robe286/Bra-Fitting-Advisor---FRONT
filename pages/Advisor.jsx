@@ -4,11 +4,11 @@ import FilterProductsForm from '../components/forms/FilterProductsForm.jsx';
 function Advisor () {
   
   return (
-    <>
+    <div>
       <BraSizeForm />
       <FilterProductsForm />
-    </>
-  )
+    </div>
+  );
 }
 
-export default Advisor
+export default Advisor;
