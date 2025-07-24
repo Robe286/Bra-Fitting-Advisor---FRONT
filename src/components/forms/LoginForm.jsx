@@ -22,7 +22,7 @@ export default function LoginForm () {
 
     try {
       const res = await API.post('/auth/login', { email, password });
-      await new Promise(resolve => setTimeout(resolve, 1500)) // Tiempo de espera
+      await new Promise(resolve => setTimeout(resolve, 1500)); // Tiempo de espera
       login(res.data.token);
       navigate(from, { replace: true }); // Redirige a la ruta original
 
