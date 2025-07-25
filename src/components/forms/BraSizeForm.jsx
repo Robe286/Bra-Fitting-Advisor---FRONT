@@ -14,8 +14,11 @@ function BraSizeForm () {
 
   const getBraSize = async () => {
     const payload = { bustInput: bustSize, underInput: underSize }
+    setLoading(true);
+    setError(null)
+    setResult(null);
+
     try {
-      setLoading(true);
       const sizes = await fetch (urlAPI, {
         method: 'POST',
         headers: {
@@ -23,14 +26,16 @@ function BraSizeForm () {
         },
         body: JSON.stringify(payload),
       });
+
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
-      await new Promise(resolve => setTimeout(resolve, 1500));
       if(!sizes.ok) { throw new Error(`Error ${sizes.status}: ${sizes.statusText}`)}
       const data = await sizes.json();
       setResult(data.size);
       
     } catch {
       setError(error.message)
+    } finally {
       setLoading(false);
     }
   }
@@ -64,11 +69,14 @@ function BraSizeForm () {
         />
         <button type="submit">Calcular talla</button>
       </form>
-      {error && (
-        <div>Error: {error}</div>
-      )}
-      {result && (
+      {loading && <Spinner
+        message="Veamos la talla que mejor sienta a tus medidas ..."
+        />}
+      {!loading && result && (
         <div>{result}</div>
+      )}
+      {!loading && error && (
+        <div style={{ color: 'crimson' }}>Error: {error}</div>
       )}
     </section>
     
