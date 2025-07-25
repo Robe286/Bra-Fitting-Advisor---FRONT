@@ -1,9 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 
+import Spinner from "../Spinner";
+
 function BraSizeForm () {
   const [bustSize, setBustSize] = useState('90');
   const [underSize, setUnderSize] = useState('75');
+  const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
@@ -12,6 +15,7 @@ function BraSizeForm () {
   const getBraSize = async () => {
     const payload = { bustInput: bustSize, underInput: underSize }
     try {
+      setLoading(true);
       const sizes = await fetch (urlAPI, {
         method: 'POST',
         headers: {
@@ -19,14 +23,15 @@ function BraSizeForm () {
         },
         body: JSON.stringify(payload),
       });
-
+      
+      await new Promise(resolve => setTimeout(resolve, 1500));
       if(!sizes.ok) { throw new Error(`Error ${sizes.status}: ${sizes.statusText}`)}
       const data = await sizes.json();
       setResult(data.size);
       
-    } catch (error) {
+    } catch {
       setError(error.message)
-      console.error(error)
+      setLoading(false);
     }
   }
   
@@ -66,6 +71,7 @@ function BraSizeForm () {
         <div>{result}</div>
       )}
     </section>
+    
   )
 }
 

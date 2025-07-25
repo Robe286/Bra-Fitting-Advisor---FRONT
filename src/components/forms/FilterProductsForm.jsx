@@ -67,7 +67,7 @@ function FilterProductsForm () {
         <ColorFilter filters={filters} setFilters={setFilters} />
         <button type="submit">Obtener recomendaciónes</button>
       </form>
-        <button type="button" onClick={handleClean}>Comienza de nuevo</button>
+      <button type="button" onClick={handleClean}>Comienza de nuevo</button>
       {error && (
         <div>Error: {error}</div>
       )}

@@ -1,4 +1,7 @@
 import Select from "react-select";
+import selectStylesdos from "../../styles/SelectStylesdos.js";
+
+
 import { brandOptions } from "../../utils/filterOptions.js";
 
 function BrandFilter ({ filters, setFilters}) {
@@ -10,10 +13,11 @@ function BrandFilter ({ filters, setFilters}) {
 
   return (
     <div>
-      <label htmlFor="brand">¿Qúe marca de sujetador sueles gastar?</label>
+      <label htmlFor="brand">¿Qué marca de sujetador sueles gastar?</label>
       <Select
         isMulti
         inputId="brand"
+        styles={selectStylesdos}
         options={brandOptions}
         value={brandOptions.filter(opt => filters.brand.includes(opt.value))}
         onChange={handleChange}

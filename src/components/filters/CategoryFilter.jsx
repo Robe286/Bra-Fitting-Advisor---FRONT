@@ -1,4 +1,5 @@
 import Select from "react-select";
+import selectStylesdos from "../../styles/SelectStylesdos.js";
 import { categoryOptions } from "../../utils/filterOptions.js";
 
 function CategoryFilter ({ filters, setFilters}) {
@@ -14,6 +15,7 @@ function CategoryFilter ({ filters, setFilters}) {
       <Select
         isMulti
         inputId="category"
+        styles={selectStylesdos}
         options={categoryOptions}
         value={categoryOptions.filter(opt => filters.category.includes(opt.value))}
         onChange={handleChange}

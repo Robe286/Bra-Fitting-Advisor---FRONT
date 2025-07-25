@@ -43,6 +43,7 @@ export default function RegisterForm () {
         onChange={e => setEmail(e.target.value)}
         placeholder="Email"
         autoComplete="off"
+        required
       />
       <input
         type="password"
@@ -51,6 +52,7 @@ export default function RegisterForm () {
         onChange={e => setPassword(e.target.value)}
         placeholder="Password"
         autoComplete="off"
+        required
       />
       <button type="submit">Registrarme</button> 
     </form>

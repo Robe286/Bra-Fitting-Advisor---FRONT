@@ -1,3 +1,85 @@
+/* Estilos globales inspirados en la estética Brabracoa */
+
+:root {
+  --rosa-vibrante: #D14B65;
+  --nude: #F3CFC6;
+  --beige: #F1DFCB;
+  --malva: #D9C3D7;
+  --fondo: #FCEFF1;
+  --texto: #4F2E3C;
+  --fuente: 'Playfair Display', serif;
+  --fuente-secundaria: 'Inter', sans-serif;
+  
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-secundaria);
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente);
+  color: var(--rosa-vibrante);
+  font-weight: 600;
+}
+
+button {
+  background-color: var(--rosa-vibrante);
+  color: white;
+  border: none;
+  padding: 0.7em 1.4em;
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: var(--fuente-secundaria);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b53b53;
+}
+
+label {
+  font-Family: 'Playfair Display', serif;
+  color: #5c2a4a;
+}
+
+input, select {
+  border: 2px solid var(--malva);
+  border-radius: 20px;
+  padding: 0.6em 1em;
+  font-family: var(--fuente-secundaria);
+  background-color: white;
+  color: var(--texto);
+  outline: none;
+  margin: 0.5em 0;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--rosa-vibrante);
+  box-shadow: 0 0 0 2px var(--nude);
+}
+
+form {
+  background-color: white;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(209, 75, 101, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+/*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -66,3 +148,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
