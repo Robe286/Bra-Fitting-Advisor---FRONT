@@ -1,75 +1,133 @@
-/* Estilos globales inspirados en la estética Brabracoa */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Variables base para coherencia */
 :root {
-  --rosa-vibrante: #D14B65;
-  --nude: #F3CFC6;
-  --beige: #F1DFCB;
-  --malva: #D9C3D7;
-  --fondo: #FCEFF1;
-  --texto: #4F2E3C;
-  --fuente: 'Playfair Display', serif;
-  --fuente-secundaria: 'Inter', sans-serif;
-  
+  --main-color: #832cc9;         /* púrpura oscuro sensual */
+  --accent-color: #f3e8ff;       /* lavanda suave */
+  --text-dark: #272411;          /* gris oscuro */
+  --text-light: #9ca3af;         /* gris claro */
+  --bg-light: #ffffff;           /* blanco */
+  --bg-soft: #faf5ff;            /* lavanda pastel */
+  --border-radius: 10px;
+  --transition: all 0.3s ease;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Reset básico */
 body {
   margin: 0;
-  font-family: var(--fuente-secundaria);
-  background-color: var(--fondo);
-  color: var(--texto);
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-soft);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-family: var(--fuente);
-  color: var(--rosa-vibrante);
+/* Formularios */
+form {
+  background-color: var(--bg-light);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  max-width: 600px;
+  margin: 2rem auto;
+  transition: var(--transition);
+}
+
+form h2,
+form h3 {
+  color: var(--main-color);
+  margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
+/* Inputs y selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="range"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--text-light);
+  border-radius: var(--border-radius);
+  background: white;
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: var(--transition);
+  margin-bottom: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 2px rgba(107, 33, 168, 0.3);
+  outline: none;
+}
+
+/* Botones */
 button {
-  background-color: var(--rosa-vibrante);
+  background-color: rgb(209, 207, 206);
   color: white;
   border: none;
-  padding: 0.7em 1.4em;
-  border-radius: 30px;
-  font-weight: 600;
-  font-family: var(--fuente-secundaria);
+  padding: 0.50rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
+  font-weight: 300;
 }
 
 button:hover {
-  background-color: #b53b53;
+  background-color: #d441bc;
 }
 
 label {
-  font-Family: 'Playfair Display', serif;
-  color: #5c2a4a;
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color: #272411; /* rosa vibrante */
+  font-family: 'Poppins', sans-serif; /* más sensual y elegante */
+  letter-spacing: 0.0px;
+  transition: all 0.3s ease;
 }
 
-input, select {
-  border: 2px solid var(--malva);
-  border-radius: 20px;
-  padding: 0.6em 1em;
-  font-family: var(--fuente-secundaria);
-  background-color: white;
-  color: var(--texto);
-  outline: none;
-  margin: 0.5em 0;
-  transition: border-color 0.3s ease;
+label:hover {
+  color: #d441bc;
+  transform: scale(1.02);
 }
 
-input:focus, select:focus {
-  border-color: var(--rosa-vibrante);
-  box-shadow: 0 0 0 2px var(--nude);
+
+
+/* Spinner */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-form {
-  background-color: white;
-  padding: 2em;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(209, 75, 101, 0.1);
+/* Mensajes */
+.message {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+  font-weight: 500;
 }
 
+.message--error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.message--success {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
 
 
 

@@ -1,5 +1,5 @@
 import Select from "react-select";
-import selectStylesdos from "../../styles/SelectStylesdos.js";
+import selectStylesTres from "../../styles/selectStylesTres.js";
 import { colorOptions } from "../../utils/filterOptions.js";
 
 function ColorFilter ({ filters, setFilters }) {
@@ -15,7 +15,7 @@ function ColorFilter ({ filters, setFilters }) {
       <Select
         isMulti
         inputId="color"
-        styles={selectStylesdos}
+        styles={selectStylesTres}
         options={colorOptions}
         value={colorOptions.filter(opt => filters.color.includes(opt.value))}
         onChange={handleChange}

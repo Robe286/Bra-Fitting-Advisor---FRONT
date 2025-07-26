@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import Spinner from "../Spinner";
+import Spinner from "../visuals/Spinner";
 
 export default function LoginForm () {
 

@@ -1,5 +1,5 @@
 import Select from "react-select";
-import selectStylesdos from "../../styles/SelectStylesdos.js";
+import selectStylesTres from "../../styles/selectStylesTres.js";
 import { stuffedOptions } from "../../utils/filterOptions.js";
 
 function StuffedFilter ({ filters, setFilters }) {
@@ -15,7 +15,7 @@ function StuffedFilter ({ filters, setFilters }) {
       <Select
         isMulti
         inputId="stuffed"
-        styles={selectStylesdos}
+        styles={selectStylesTres}
         options={stuffedOptions}
         value={stuffedOptions.filter(opt => filters.stuffed.includes(opt.value))}
         onChange={handleChange}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-import Spinner from "../Spinner";
+import Spinner from "../visuals/Spinner";
 
 function BraSizeForm () {
   const [bustSize, setBustSize] = useState('90');
@@ -27,7 +27,7 @@ function BraSizeForm () {
         body: JSON.stringify(payload),
       });
 
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 2500));
       
       if(!sizes.ok) { throw new Error(`Error ${sizes.status}: ${sizes.statusText}`)}
       const data = await sizes.json();
@@ -46,27 +46,32 @@ function BraSizeForm () {
   }
 
   return (
-    <section>
+    <section className="range-wrapper">
+      <h4>¿Estás lista? Introduce tus medidas en nuestra calculadora de tallas</h4>
       <form onSubmit={handleSubmit}>
-        <h3>Calculadora de Tallas</h3>
         <label htmlFor="bustSlider">Contorno pecho: {bustSize}</label>
-        <input
-          id="bustSlider"
-          type="range"
-          min={72}
-          max={129}
-          value={bustSize}
-          onChange={(e) => setBustSize(e.target.value)}
-        />
+        <div className="slider-wrapper">
+          <input
+            id="bustSlider"
+            type="range"
+            min={72}
+            max={129}
+            value={bustSize}
+            onChange={(e) => setBustSize(e.target.value)}
+          />
+        </div>
         <label htmlFor="underSlider">Contorno bajo pecho: {underSize}</label>
-        <input
-          id="underSlider"
-          type="range"
-          min={58}
-          max={107}
-          value={underSize}
-          onChange={(e) => setUnderSize(e.target.value)}
-        />
+        <div className="slider-wrapper">
+          <input
+            id="underSlider"
+            type="range"
+            min={58}
+            max={107}
+            value={underSize}
+            onChange={(e) => setUnderSize(e.target.value)}
+          />
+
+        </div>
         <button type="submit">Calcular talla</button>
       </form>
       {loading && <Spinner

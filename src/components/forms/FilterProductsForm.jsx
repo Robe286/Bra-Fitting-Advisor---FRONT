@@ -44,6 +44,7 @@ function FilterProductsForm () {
   const handleClean = () => {
     resetFilters()
     setResult(null)
+    setError(null)
   }
 
   const handleSubmit = (e) => {
@@ -56,7 +57,8 @@ function FilterProductsForm () {
   };
 
   return (
-    <section>
+    <section className="formAnswers-container">
+      <h4>Ahora ya puedes elegir el sujetador perfecto. Cuentanos</h4>
       <form onSubmit={handleSubmit}>
         <SizeFilter filters={filters} setFilters={setFilters} />
         <CupFilter filters={filters} setFilters={setFilters} />
@@ -65,7 +67,10 @@ function FilterProductsForm () {
         <BrandFilter filters={filters} setFilters={setFilters} />
         <PriceFilter filters={filters} setFilters={setFilters} />
         <ColorFilter filters={filters} setFilters={setFilters} />
-        <button type="submit">Obtener recomendaciónes</button>
+        <button
+          type="submit"
+          className="recomend-button"
+          >Obtener recomendaciónes</button>
       </form>
       <button type="button" onClick={handleClean}>Comienza de nuevo</button>
       {error && (

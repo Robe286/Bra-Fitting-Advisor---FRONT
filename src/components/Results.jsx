@@ -3,7 +3,9 @@ function Results({ products }) {
   if (products === null) return null; // No mostrar nada al inicio
   
   if (products.products.length === 0) {
-    return <span>No se han encontrado productos para estas indicaciónes</span>
+    return <span className="info-span">
+      No se han encontrado productos para estas indicaciónes
+      </span>
   }
   
   return (

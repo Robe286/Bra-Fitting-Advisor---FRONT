@@ -1,5 +1,5 @@
 import Select from "react-select";
-import selectStylesdos from "../../styles/SelectStylesdos.js";
+import selectStylesTres from "../../styles/selectStylesTres.js";
 
 
 import { brandOptions } from "../../utils/filterOptions.js";
@@ -17,7 +17,7 @@ function BrandFilter ({ filters, setFilters}) {
       <Select
         isMulti
         inputId="brand"
-        styles={selectStylesdos}
+        styles={selectStylesTres}
         options={brandOptions}
         value={brandOptions.filter(opt => filters.brand.includes(opt.value))}
         onChange={handleChange}
