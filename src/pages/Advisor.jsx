@@ -1,7 +1,7 @@
 import BraSizeForm from '../components/forms/BraSizeForm.jsx';
 import FilterProductsForm from '../components/forms/FilterProductsForm.jsx';
-import VideoPerfectBra from '../components/visuals/VideoPerfectBra.jsx';
 import VideoParagraph from '../utils/VideoParagraph.jsx';
+import VideoBraOne from '../components/visuals/VideoBraOne.jsx';
 
 function Advisor () {
   const imageURL = 'https://shre.ink/xnx4'
@@ -19,7 +19,7 @@ function Advisor () {
           </h4>
         </div>
         <div className='video-bra-size-container'>
-          <VideoPerfectBra />
+          <VideoBraOne />
           <VideoParagraph />
         </div>
       </div>

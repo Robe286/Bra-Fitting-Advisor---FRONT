@@ -19,7 +19,7 @@ function FilterProductsForm () {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  const urlAPI = import.meta.env.VITE_URL_FITER;
+  const urlAPI = import.meta.env.VITE_URL_FILTER;
 
   const getFilterProducts = async () => {
     const payload = { filters }

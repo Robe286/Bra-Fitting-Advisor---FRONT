@@ -73,6 +73,18 @@
   font-weight: 100;
 }
 
+/* Pagina Advisor*/
+
+.video-container-perfectbra {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .video-container-perfectbra {
+    flex-direction: column;
+  }
+}
+
 /* Pagina register and login*/
 
 .register-login {
@@ -477,12 +489,6 @@ input[type="range"]::-moz-range-thumb:hover {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-}
-
-/* Video bra size */
-
-.video-container-perfectBra {
-  gap: 20px;
 }
 
 .video-bra-size-container {
