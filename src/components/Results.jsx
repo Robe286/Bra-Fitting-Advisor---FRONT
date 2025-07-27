@@ -9,22 +9,27 @@ function Results({ products }) {
   }
   
   return (
-    <div>
-        <ul>
-          {products.products.map((product) => (
-            <li key={product._id}>
-              <div>
-                <img
-                  src={product.image}
-                  alt={product.description}
-                  width={400}
-                  height={500}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-    </div>
+    <section className="results-grid">
+      {products.products.map(product => (
+        <div className="product-card" key={product._id}>
+          <div className="product-image-wrapper">
+            <img src={product.image} alt={product.description}/>
+          </div>
+          <div className="product-info">
+            <p className="product-brand">{product.brand}</p>
+            <p className="product-description">{product.description}</p>
+            <p className="product-category">{product.category} - {product.stuffed}</p>
+            <p className="product-color">{product.color}</p>
+            <p className="product-size">{product.size}{product.cup}</p>
+            <div className="product-pricing">
+              <span className="discount">(-{product.discount}%)</span>
+              <span className="old-price">{product.price}€</span>
+              <span className="new-price">{product.price}€</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
   );
 }
 

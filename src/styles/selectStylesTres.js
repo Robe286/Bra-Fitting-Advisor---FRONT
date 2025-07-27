@@ -1,4 +1,5 @@
 const selectStylesTres = {
+  
   control: (base, state) => ({
     ...base,
     backgroundColor: '#fff',

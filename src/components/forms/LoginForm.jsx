@@ -14,7 +14,7 @@ export default function LoginForm () {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/advisor"; // fallback
+  const from = location.state?.from?.pathname || "/advisor";
 
   const handleLogin = async e => {
     e.preventDefault();

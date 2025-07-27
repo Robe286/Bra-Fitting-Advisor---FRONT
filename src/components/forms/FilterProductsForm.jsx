@@ -58,15 +58,16 @@ function FilterProductsForm () {
 
   return (
     <section className="formAnswers-container">
-      <h4>Ahora ya puedes elegir el sujetador perfecto. Cuentanos</h4>
+      <h4>Ahora ya puedes elegir el sujetador perfecto</h4>
+      <h4>Vamos a hacerte algunas preguntas, cuanto más nos cuentes mejor podremos asesorarte</h4>
       <form onSubmit={handleSubmit}>
         <SizeFilter filters={filters} setFilters={setFilters} />
         <CupFilter filters={filters} setFilters={setFilters} />
         <CategoryFilter filters={filters} setFilters={setFilters} />
         <StuffedFilter filters={filters} setFilters={setFilters} />
         <BrandFilter filters={filters} setFilters={setFilters} />
-        <PriceFilter filters={filters} setFilters={setFilters} />
         <ColorFilter filters={filters} setFilters={setFilters} />
+        <PriceFilter filters={filters} setFilters={setFilters} />
         <button
           type="submit"
           className="recomend-button"

@@ -78,7 +78,7 @@ function BraSizeForm () {
         message="Veamos la talla que mejor sienta a tus medidas ..."
         />}
       {!loading && result && (
-        <div>{result}</div>
+        <div style={{fontSize: "18px", fontWeight: "600", color: "#d441bc"}}>{result}</div>
       )}
       {!loading && error && (
         <div style={{ color: 'crimson' }}>Error: {error}</div>

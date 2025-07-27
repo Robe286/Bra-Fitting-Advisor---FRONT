@@ -15,7 +15,7 @@ function SizeFilter ({ filters, setFilters }) {
         inputId="size"
         styles={selectStylesTres}
         options={sizeOptions}
-        value={sizeOptions.find(opt => opt.value === filters.size)}
+        value={sizeOptions.find(opt => opt.value === filters.size) || null}
         onChange={handleChange}
         placeholder="Selecciona tu talla"
       />

@@ -15,7 +15,7 @@ function CupFilter ({ filters, setFilters}) {
         inputId="cup"
         styles={selectStylesTres}
         options={cupOptions}
-        value={cupOptions.find(opt => opt.value === filters.cup)}
+        value={cupOptions.find(opt => opt.value === filters.cup) || null}
         onChange={handleChange}
         placeholder="Selecciona tu medida de copa"
       />
