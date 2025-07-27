@@ -27,13 +27,11 @@ function FilterProductsForm () {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      console.log('Filtros antes de enviar:', payload);
 
       if(!filters.ok) { throw new Error(`Error ${filters.status}: ${filters.statusText}`)}
 
       const data = await filters.json();
       setResult(data);
-      console.log(data);
 
     } catch (error) {
       setError(error.message)
@@ -77,6 +75,9 @@ function FilterProductsForm () {
       {error && (
         <div>Error: {error}</div>
       )}
+      <br></br>
+      <br></br>
+      <br></br>
       <div>
         <Results products={result}/>
       </div>

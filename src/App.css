@@ -17,6 +17,104 @@
 
 /* --- End vite default css ---*/
 
+/* --- Nav ---*/
+
+.nav-container {
+  display: flex;
+  justify-content:space-between;
+  background-color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+/* Página Home */
+
+.home-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fondo con varias imágenes verticales */
+.home-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: 
+  url('https://shre.ink/xU30') center center/ auto 100% no-repeat,
+  url('https://shre.ink/xU3J') left center / auto 100% no-repeat,
+  url('https://shre.ink/xUAH') right center / auto 100% no-repeat;
+  background-color: #f8f0fc; /* color de respaldo */
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.home-container h1 {
+  font-size: 40px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.home-container button {
+  background-color: rgb(102, 211, 196);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 100;
+}
+
+/* Pagina register and login*/
+
+.register-login {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 5.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fondo con varias imágenes verticales */
+.register-login::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: 
+    url('https://res.cloudinary.com/dzp5cifta/image/upload/v1753497877/imagen_para_home4_qowngw.webp') left center / auto 100% no-repeat,
+    url('') center center / auto 100% no-repeat,
+    url('https://shre.ink/xUAH') right center / auto 100% no-repeat;
+  background-color: #f8f0fc; /* color de respaldo */
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.register-login button {
+  background-color: rgb(102, 211, 196);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 100;
+}
+
+/* Spinner*/
+
 .spinner-container {
   display: flex;
   flex-direction: column;
@@ -271,13 +369,6 @@ input[type="range"]::-moz-range-thumb:hover {
 
 }
 
-/* --- Nav ---*/
-
-.nav-container {
-  background-color: #faf5ff;
-  padding: 10px;
-  font-size: 20px;
-}
 
 /* --- imagen de fondo y elementos ---*/
 
@@ -389,6 +480,10 @@ input[type="range"]::-moz-range-thumb:hover {
 }
 
 /* Video bra size */
+
+.video-container-perfectBra {
+  gap: 20px;
+}
 
 .video-bra-size-container {
   display:flex;
@@ -539,24 +634,4 @@ font-size: 0.8rem;
   color: #6b21a8;
   font-size: 0.85rem;
   font-weight: 500;
-}
-
-/* Home */
-
-.hero-images img {
-  margin-top: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.home-container h4 {
-  padding-bottom: 20px;
-}
-
-@media (max-width: 640px) {
-  .hero-images img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: 20px;
-  }
 }

@@ -9,26 +9,32 @@ function Results({ products }) {
   }
   
   return (
-    <section className="results-grid">
-      {products.products.map(product => (
-        <div className="product-card" key={product._id}>
-          <div className="product-image-wrapper">
-            <img src={product.image} alt={product.description}/>
-          </div>
-          <div className="product-info">
-            <p className="product-brand">{product.brand}</p>
-            <p className="product-description">{product.description}</p>
-            <p className="product-category">{product.category} - {product.stuffed}</p>
-            <p className="product-color">{product.color}</p>
-            <p className="product-size">{product.size}{product.cup}</p>
-            <div className="product-pricing">
-              <span className="discount">(-{product.discount}%)</span>
-              <span className="old-price">{product.price}€</span>
-              <span className="new-price">{product.price}€</span>
+    <section>
+      <div>
+        <h3 style={{ color: "#d441bc" }}>Estos productos se acoplan a tus preferencias</h3>
+      </div>
+      <div className="results-grid">
+        {products.products.map(product => (
+          <div className="product-card" key={product._id}>
+            <div className="product-image-wrapper">
+              <img src={product.image} alt={product.description}/>
+            </div>
+            <div className="product-info">
+              <p className="product-brand">{product.brand}</p>
+              <p className="product-description">{product.description}</p>
+              <p className="product-category">{product.category} - {product.stuffed}</p>
+              <p className="product-color">{product.color}</p>
+              <p className="product-size">{product.size}{product.cup}</p>
+              <div className="product-pricing">
+                <span className="discount">(-{product.discount}%)</span>
+                <span className="old-price">{product.price}€</span>
+                <span className="new-price">{product.price}€</span>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
     </section>
   );
 }

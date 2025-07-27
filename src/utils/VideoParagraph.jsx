@@ -10,8 +10,8 @@ function VideoParagraph () {
         talla de sujetador que no se adapta a ellas. Al igual que la
         talla, saber que tipo de sujetador te conviene según la forma
         de tu pecho, es crucial para tu bienestar y comodidad.
-        Pero no te preocupes, estamos encantadas de ayudarte. <strong>Este video
-        te muestra los pasos y detalles que debes tener en cuenta para tomarte
+        Pero no te preocupes, estamos encantadas de ayudarte. <strong>Estos videos
+        te muestra los pasoss y detalles que debes tener en cuenta para tomarte
         las medidas correctamente</strong>
       </p>
     </div>

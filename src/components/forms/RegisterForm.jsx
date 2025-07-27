@@ -41,7 +41,7 @@ export default function RegisterForm () {
         name="email"
         value={email}
         onChange={e => setEmail(e.target.value)}
-        placeholder="Email"
+        placeholder="Introduce un email"
         autoComplete="off"
         required
       />
@@ -50,7 +50,7 @@ export default function RegisterForm () {
         name="password"
         value={password}
         onChange={e => setPassword(e.target.value)}
-        placeholder="Password"
+        placeholder="Introduce una contraseña"
         autoComplete="off"
         required
       />
