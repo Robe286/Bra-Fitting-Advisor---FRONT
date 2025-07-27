@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useFilters } from "../../hooks/useFilters.js";
 
-import CupFilter from "../filters/cupFilter.jsx";
-import SizeFilter from "../filters/sizeFilter.jsx";
+import CupFilter from "../filters/CupFilter.jsx";
+import SizeFilter from "../filters/SizeFilter.jsx";
 import BrandFilter from "../filters/BrandFilter.jsx";
-import PriceFilter from "../filters/priceFilter.jsx";
-import ColorFilter from "../filters/colorFilter.jsx";
-import StuffedFilter from "../filters/stuffedFilter.jsx";
-import CategoryFilter from "../filters/categoryFilter.jsx";
+import PriceFilter from "../filters/PriceFilter.jsx";
+import ColorFilter from "../filters/ColorFilter.jsx";
+import StuffedFilter from "../filters/StuffedFilter.jsx";
+import CategoryFilter from "../filters/CategoryFilter.jsx";
 
 import Spinner from "../visuals/Spinner.jsx";
 import Results from "../Results.jsx";
@@ -19,9 +19,8 @@ function FilterProductsForm () {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  // const urlAPI = 'https://bra-fitting-advisor-back.onrender.com/api/products/filter'
   const urlAPI = import.meta.env.VITE_URL_FITER;
-  
+
   const getFilterProducts = async () => {
     const payload = { filters }
     setLoading(true);

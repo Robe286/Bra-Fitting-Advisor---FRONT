@@ -9,7 +9,6 @@ function BraSizeForm () {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  //const urlAPI = 'https://bra-fitting-advisor-back.onrender.com/api/sizes/calculate-bra';
   const urlAPI = import.meta.env.VITE_URL_CALCULATE_BRA;
 
   const getBraSize = async () => {
