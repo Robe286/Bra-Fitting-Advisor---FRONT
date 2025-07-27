@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const API = axios.create({
-  baseURL: 'https://bra-fitting-advisor-back.onrender.com/api/',
+  baseURL: import.meta.env.VITE_AXIOS_BASE_URL,
   withCredentials: true, // Permite envío de cookies
 });
 

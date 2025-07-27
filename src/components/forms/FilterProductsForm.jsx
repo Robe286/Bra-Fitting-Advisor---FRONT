@@ -19,8 +19,9 @@ function FilterProductsForm () {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  const urlAPI = 'https://bra-fitting-advisor-back.onrender.com/api/products/filter'
-
+  // const urlAPI = 'https://bra-fitting-advisor-back.onrender.com/api/products/filter'
+  const urlAPI = import.meta.env.VITE_URL_FITER;
+  
   const getFilterProducts = async () => {
     const payload = { filters }
     setLoading(true);
