@@ -7,14 +7,14 @@ function Footer() {
         <p>&copy; {new Date().getFullYear()} Bra Fitting Advisor · Todas las curvas cuentan</p>
         <div className="social-icons">
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/brabracoa/"
             rel="noopener noreferrer"
             target="_blank"
             aria-label="Instagram">
             <FaInstagram />
           </a>
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/brabracoa/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook">
