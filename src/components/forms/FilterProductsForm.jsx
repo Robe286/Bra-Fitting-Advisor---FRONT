@@ -9,24 +9,30 @@ import ColorFilter from "../filters/colorFilter.jsx";
 import StuffedFilter from "../filters/stuffedFilter.jsx";
 import CategoryFilter from "../filters/categoryFilter.jsx";
 
+import Spinner from "../visuals/Spinner.jsx";
 import Results from "../Results.jsx";
 
 function FilterProductsForm () {
 
   const { filters, setFilters, resetFilters, filtersAreEmpty } = useFilters();
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
-  const urlAPI = 'http://localhost:3001/api/products/filter'
+  const urlAPI = 'https://bra-fitting-advisor-back.onrender.com/api/products/filter'
 
   const getFilterProducts = async () => {
     const payload = { filters }
+    setLoading(true);
+
     try {
       const filters = await fetch(urlAPI, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
+
+      await new Promise(resolve => setTimeout(resolve, 2500));
 
       if(!filters.ok) { throw new Error(`Error ${filters.status}: ${filters.statusText}`)}
 
@@ -36,6 +42,8 @@ function FilterProductsForm () {
     } catch (error) {
       setError(error.message)
       console.error(error)
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -78,6 +86,7 @@ function FilterProductsForm () {
       <br></br>
       <br></br>
       <br></br>
+      {loading && <Spinner message="Veamos que tenemos por aquí que le siente divinamente a tus medidas ..." />}
       <div>
         <Results products={result}/>
       </div>

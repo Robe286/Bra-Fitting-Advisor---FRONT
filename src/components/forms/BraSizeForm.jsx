@@ -10,7 +10,7 @@ function BraSizeForm () {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  const urlAPI = 'http://localhost:3001/api/sizes/calculate-bra'
+  const urlAPI = 'https://bra-fitting-advisor-back.onrender.com/api/sizes/calculate-bra'
 
   const getBraSize = async () => {
     const payload = { bustInput: bustSize, underInput: underSize }
